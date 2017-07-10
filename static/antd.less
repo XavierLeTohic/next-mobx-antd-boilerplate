@@ -1,0 +1,107 @@
+@import "~antd/dist/antd.less";   // import official less entry file
+
+@primary-color: #f1652c;
+@link-color: #108ee9;
+
+.address_selection {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    color: #108ee9;
+
+    .ant-popover-inner-content {
+        padding: 0;
+    }
+}
+
+.tabs__container .ant-tabs {
+    transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s;
+}
+
+.title__separator {
+    text-align: center;
+    display: table;
+    white-space: nowrap;
+    font-size: 22px;
+    width: 100%;
+    margin: 50px auto;
+    font-weight: bold;
+    font-family: "BlinkMacSystemFont", "Segoe UI", Roboto,
+    "Helvetica Neue", Helvetica;
+
+    &:before, &:after {
+        content: '';
+        display: table-cell;
+        width: 50%;
+        position: relative;
+        top: 14px;
+        border-top: 1px solid #B9B9AF;
+    }
+
+    &:before {
+        right: 15px;
+    }
+
+    &::after {
+        left: 15px;
+    }
+}
+
+.login__container {
+    button {
+        width: 100%;
+    }
+}
+
+.menu li a:visited,
+.menu li a {
+    color: inherit;
+}
+
+.menu li {
+    display: inline-block;
+    line-height: 50px;
+    font-size: 14px;
+    vertical-align: top;
+}
+
+.menu li:not(:first-child) {
+    margin-left: 25px;
+}
+
+.menu li .cartIcon {
+    font-size: 25px;
+}
+
+
+@media only screen and (min-width : 48em) {
+    .order__page .tabs__container {
+        .ant-tabs-nav {
+            float: none;
+            margin: auto;
+            max-width: 550px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .hidden-xs {
+        display: none !important;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .hidden-sm {
+        display: none !important;
+    }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+    .hidden-md {
+        display: none !important;
+    }
+}
+@media (min-width: 1200px) {
+    .hidden-lg {
+        display: none !important;
+    }
+}
