@@ -1,24 +1,27 @@
-import React from 'react'
+import { Component } from 'react'
 import { Provider } from 'mobx-react'
-import { initStore } from '../store'
+import { observer } from 'mobx-react';
+
+
+import initUserStore from '../store/user'
 import Page from '../components/Page'
 
-export default class Counter extends React.Component {
-  static getInitialProps ({ req }) {
-    const isServer = !!req
-    const store = initStore(isServer)
-    return { lastUpdate: store.lastUpdate, isServer }
-  }
+@observer
+export default class Index extends Component {
 
   constructor (props) {
     super(props)
-    this.store = initStore(props.isServer, props.lastUpdate)
+    this.user = initUserStore(props.isServer)
   }
 
   render () {
     return (
-      <Provider store={this.store}>
-        <Page title='Index Page' linkTo='/other' />
+      <Provider user={this.user}>
+        <Page>
+          <div>
+            Bonjour {this.user.firstname} !
+          </div>
+        </Page>
       </Provider>
     )
   }
