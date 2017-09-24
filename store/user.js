@@ -3,7 +3,7 @@ import { action, observable } from 'mobx'
 let store = null;
 
 class UserStore {
-    @observable firstname = "Kevin"
+    @observable firstname = "John"
 }
 
 export default function initStore (isServer) {

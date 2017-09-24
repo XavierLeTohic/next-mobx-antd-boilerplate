@@ -1,8 +1,6 @@
 import { Component } from 'react'
 import { Provider } from 'mobx-react'
 import { observer } from 'mobx-react';
-
-
 import initUserStore from '../store/user'
 import Page from '../components/Page'
 
@@ -15,6 +13,7 @@ export default class Index extends Component {
   }
 
   render () {
+
     return (
       <Provider user={this.user}>
         <Page>
